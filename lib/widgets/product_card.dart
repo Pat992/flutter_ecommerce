@@ -3,8 +3,11 @@ import 'package:flutter_ecommerce/models/models.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
+  final double widthFactor;
+
   const ProductCard({
     required this.product,
+    this.widthFactor = 2.5,
     Key? key,
   }) : super(key: key);
 
@@ -13,7 +16,7 @@ class ProductCard extends StatelessWidget {
     return Stack(
       children: <Widget>[
         SizedBox(
-          width: MediaQuery.of(context).size.width / 2.5,
+          width: MediaQuery.of(context).size.width / this.widthFactor,
           height: 150,
           child: Image.network(
             product.imageUrl,
